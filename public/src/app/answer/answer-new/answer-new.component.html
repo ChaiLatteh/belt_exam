@@ -1,0 +1,7 @@
+<p>answer-new works!</p>
+<form (submit)="createAnswer(formData)" #formData="ngForm">
+  <p>Your Answer:</p><textarea name="answer" rows="8" cols="80" required minlength="5" ngModel #answer="ngModel"></textarea>
+  <div *ngIf="!answer.valid">Your answer must be at least 5 characters long!!</div>
+  <p>Supporting details for your answer (optional):</p><textarea name="details" rows="8" cols="80" ngModel></textarea>
+  <input [disabled]="!answer.valid" type="submit" value="Submit">
+</form>

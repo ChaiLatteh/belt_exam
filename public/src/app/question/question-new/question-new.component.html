@@ -1,0 +1,7 @@
+<h1>New Question</h1>
+<form (submit)="createQuestion(formData)" #formData="ngForm">
+  <p>Question:</p><textarea name="question" rows="8" cols="80" required minlength="10" ngModel #question="ngModel"></textarea>
+  <div *ngIf="!question.valid">Question must be at least 10 characters long!!</div>
+  <p>Description (optional):</p><textarea name="description" rows="8" cols="80" ngModel></textarea>
+  <input [disabled]="!question.valid" type="submit" value="Submit">
+</form>
